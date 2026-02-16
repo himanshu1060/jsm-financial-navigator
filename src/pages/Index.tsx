@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/sections/Header";
+import HeroSection from "@/components/sections/HeroSection";
+import HomeSection from "@/components/sections/HomeSection";
+import AboutSection from "@/components/sections/AboutSection";
+import WealthServices from "@/components/sections/WealthServices";
+import InsuranceServices from "@/components/sections/InsuranceServices";
+import SmartSip360 from "@/components/sections/SmartSip360";
+import BlogSection from "@/components/sections/BlogSection";
+import AssociatedCompanies from "@/components/sections/AssociatedCompanies";
+import ContactSection from "@/components/sections/ContactSection";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <Header />
+      <HeroSection />
+      <HomeSection />
+      <AboutSection />
+      <WealthServices />
+      <InsuranceServices />
+      <SmartSip360 />
+      <BlogSection />
+      <AssociatedCompanies />
+      <ContactSection />
+      <Footer />
+    </main>
   );
 };
 
