@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -8,7 +9,7 @@ const navLinks = [
   { label: "About Us", href: "#about" },
   { label: "JSM Wealth", href: "#wealth" },
   { label: "JSM Insurance", href: "#insurance" },
-  { label: "SMART SIP 360", href: "#smartsip" },
+  { label: "SMART SIP 360", href: "/smart-sip-360", isRoute: true },
   { label: "Blogs", href: "#blogs" },
   { label: "Contact Us", href: "#contact" },
 ];
@@ -16,6 +17,8 @@ const navLinks = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -23,9 +26,22 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
+  const handleClick = (link: { href: string; isRoute?: boolean }) => {
     setOpen(false);
-    const el = document.querySelector(href);
+    if (link.isRoute) {
+      navigate(link.href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    // If on another page, go home first then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return;
+    }
+    const el = document.querySelector(link.href);
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -43,7 +59,7 @@ const Header = () => {
           {navLinks.map((link) => (
             <button
               key={link.href}
-              onClick={() => handleClick(link.href)}
+              onClick={() => handleClick(link)}
               className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {link.label}
@@ -64,7 +80,7 @@ const Header = () => {
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
-                    onClick={() => handleClick(link.href)}
+                    onClick={() => handleClick(link)}
                     className="text-left text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2"
                   >
                     {link.label}
