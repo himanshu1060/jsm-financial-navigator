@@ -34,15 +34,21 @@ import {
   Briefcase,
   Baby,
   PiggyBank,
+  RefreshCw,
+  Layers,
+  Lock,
+  AlertTriangle,
+  UserCheck,
+  Zap,
 } from "lucide-react";
 
-// ─── Content in English & Hindi ───
 const content = {
   en: {
     langBtn: "हिंदी में देखें",
     hero: {
-      h1: "SMART SIP 360 by Tata AIA – Build Wealth. Protect Family. Create Future Income.",
-      h2: "Market-Linked Investment Plan with Life Cover up to 360X.",
+      h1: "SMART SIP 360 by Tata AIA",
+      h1sub: "Build Wealth. Protect Family. Create Future Income.",
+      h2: "A market-linked investment plan that gives you life cover of up to 360× your SIP amount.",
       desc: [
         "Invest regularly like a SIP.",
         "Enjoy market-linked growth.",
@@ -62,15 +68,14 @@ const content = {
       text: "SMART SIP 360 is a comprehensive Unit Linked Insurance Plan (ULIP) that combines the power of systematic investment with robust life insurance coverage. It empowers you to grow your wealth while safeguarding your family's future.",
       boxes: [
         { title: "Wealth Creation", desc: "Grow your money with market-linked returns through disciplined SIP investing." },
-        { title: "Life Protection", desc: "Inbuilt life cover ensures your family is financially secure, come what may." },
+        { title: "Life Insurance Protection", desc: "Inbuilt life cover secures your family – in life and beyond." },
         { title: "Goal-Based Planning", desc: "Align your investments to specific goals — education, retirement, home, or legacy." },
-        { title: "Second Income", desc: "Create a future income stream through smart partial withdrawal strategies." },
+        { title: "Second Income Strategy", desc: "Create a future tax-free income stream through smart partial withdrawal strategies." },
       ],
     },
     powerful: {
       title: "Why SMART SIP 360 is Powerful?",
       cards: [
-        { title: "100% Premium Investment", desc: "Every rupee you invest works for you from day one with zero allocation charges after initial years." },
         { title: "Life Cover up to 360X", desc: "Example: ₹20,000 monthly SIP = ₹72 Lakhs life cover to protect your loved ones." },
         { title: "Tax-Free Structure", desc: "Maturity proceeds are 100% tax-free under Section 10(10D), boosting your effective returns." },
         { title: "Smart Partial Withdrawals", desc: "Access your funds when you need them — for emergencies, goals, or creating second income." },
@@ -81,9 +86,9 @@ const content = {
     plans: {
       title: "Choose Your Plan Option",
       items: [
-        { name: "Wealth Secure", desc: "Focused on long-term wealth creation with maximum market exposure and growth potential.", recommended: false },
-        { name: "Future Secure", desc: "Balanced approach combining growth with protection for your family's milestones.", recommended: false },
-        { name: "Family Secure", desc: "Maximum life coverage with wealth-building — ideal for breadwinners who want both security and growth.", recommended: true },
+        { name: "Wealth Secure", desc: "Focused on long-term wealth creation with maximum market exposure and growth potential." },
+        { name: "Future Secure", desc: "Balanced approach combining growth with protection for your family's milestones." },
+        { name: "Family Secure", desc: "Maximum life coverage with wealth-building — ideal for breadwinners who want both security and growth." },
       ],
     },
     illustration: {
@@ -107,13 +112,11 @@ const content = {
         ["Entry Age", "0 – 60 years"],
         ["Policy Term", "15 / 20 / 25 / 30 years"],
         ["Premium Payment Term", "5 / 7 / 10 / 12 years"],
-        ["Min Premium", "₹3,000/month"],
+        ["Min – Max Premium", "₹2,000 – ₹20,000 per month"],
         ["Sum Assured", "Up to 360X monthly premium"],
         ["Fund Options", "Multiple fund choices across equity, debt & balanced"],
         ["Partial Withdrawal", "Allowed after 5 policy years"],
         ["Tax Benefit", "Section 80C (premiums) & 10(10D) (maturity)"],
-        ["Loan Facility", "Not applicable (ULIP)"],
-        ["Settlement Options", "Lumpsum or staggered payout"],
       ],
     },
     whyUs: {
@@ -132,10 +135,10 @@ const content = {
       fields: { name: "Name", mobile: "Mobile Number", email: "Email", budget: "Monthly Investment Budget", goal: "Your Goal" },
       goals: ["Child's Education", "Retirement Planning", "Wealth Creation", "Tax Saving", "Family Protection", "Second Income"],
       btn: "GET MY CUSTOM PLAN NOW",
-      call: "Call / WhatsApp: 9425393438",
+      call: "Call / WhatsApp: +91 9425393438",
     },
     faq: {
-      title: "Frequently Asked Questions",
+      title: "Question Summary",
       items: [
         { q: "What is SMART SIP 360?", a: "SMART SIP 360 is a ULIP (Unit Linked Insurance Plan) offered by Tata AIA that combines systematic investment with life insurance. It lets you invest like a SIP while providing life cover up to 360 times your monthly premium." },
         { q: "Is SMART SIP 360 safe?", a: "Like all market-linked plans, returns depend on fund performance. However, the life cover component guarantees protection for your family. You can choose from multiple fund options to match your risk appetite." },
@@ -147,12 +150,57 @@ const content = {
         { q: "How is this different from a regular SIP in mutual funds?", a: "Unlike mutual fund SIPs, SMART SIP 360 provides inbuilt life insurance cover, tax-free maturity, and waiver of premium benefit — making it a comprehensive financial solution." },
       ],
     },
+    smartSipCombo: {
+      title: "SMART SIP 360 = Investment + Insurance in One Smart Plan",
+      text: "ULIPs combine life insurance with market-linked investments. Premiums split between coverage and funds (equity, debt, or hybrid) based on risk. They offer flexible, long-term wealth creation and 100% tax-free maturity for goals like child's education or retirement.",
+    },
+    ulipBlocks: {
+      howWorks: {
+        title: "How Does a ULIP Plan Work?",
+        points: [
+          "Pay regular premiums (monthly/quarterly/yearly); portion funds life insurance, remainder invests in chosen funds.",
+          "Investment splits into units at fixed face value; unit value is Net Asset Value (NAV).",
+          "Grows with market performance; switch funds per conditions.",
+          "Receive fund value at maturity.",
+          "On death, family gets higher of Sum Assured + Total Fund Value (TATA pays remaining premiums per plan).",
+        ],
+      },
+      keyFeatures: {
+        title: "Key Features of ULIPs",
+        items: [
+          { title: "Insurance + Investment in One Plan", desc: "ULIPs offer dual benefits: market-linked wealth creation and life insurance." },
+          { title: "Switch Between Funds", desc: "Switch between equity/debt funds; allows 12 switches (per policy terms)." },
+          { title: "Premium Redirection", desc: "Redirect future premiums anytime via allocation percentages." },
+          { title: "Partial Withdrawals", desc: "5-year lock-in; after that unlimited partial withdrawals (per policy terms)." },
+        ],
+      },
+      myths: {
+        title: "Common Myths About ULIPs",
+        items: [
+          { myth: "ULIPs Give Low Returns", reality: "Modern ULIPs deliver competitive returns." },
+          { myth: "ULIPs Are Expensive", reality: "IRDAI regulations reduced charges." },
+          { myth: "ULIPs Are High Risk", reality: "Risk depends on chosen fund." },
+          { myth: "ULIPs Are Complicated", reality: "Easy once fund allocation is understood." },
+          { myth: "Market Fluctuations Affect Life Cover", reality: "Life cover stays fixed." },
+        ],
+      },
+      whoCanOpt: {
+        title: "Who Can Opt for This Plan?",
+        items: [
+          "Long-term wealth builders",
+          "Investors seeking protection + growth",
+          "Tax-conscious individuals",
+          "Low- to high-risk profiles",
+        ],
+      },
+    },
   },
   hi: {
     langBtn: "View in English",
     hero: {
-      h1: "SMART SIP 360 by Tata AIA – संपत्ति बनाएं। परिवार सुरक्षित करें। भविष्य की आय बनाएं।",
-      h2: "360X तक लाइफ कवर के साथ मार्केट-लिंक्ड निवेश योजना।",
+      h1: "SMART SIP 360 by Tata AIA",
+      h1sub: "संपत्ति बनाएं। परिवार सुरक्षित करें। भविष्य की आय बनाएं।",
+      h2: "एक मार्केट-लिंक्ड निवेश योजना जो आपको आपकी SIP राशि का 360× तक लाइफ कवर देती है।",
       desc: [
         "SIP की तरह नियमित रूप से निवेश करें।",
         "मार्केट-लिंक्ड ग्रोथ का आनंद लें।",
@@ -169,18 +217,17 @@ const content = {
     },
     whatIs: {
       title: "SMART SIP 360 क्या है?",
-      text: "SMART SIP 360 एक व्यापक यूनिट लिंक्ड इंश्योरेंस प्लान (ULIP) है जो व्यवस्थित निवेश की शक्ति को मजबूत जीवन बीमा कवरेज के साथ जोड़ता है। यह आपको अपनी संपत्ति बढ़ाने के साथ-साथ अपने परिवार के भविष्य की सुरक्षा करने में सक्षम बनाता है।",
+      text: "SMART SIP 360 एक व्यापक यूनिट लिंक्ड इंश्योरेंस प्लान (ULIP) है जो व्यवस्थित निवेश की शक्ति को मजबूत जीवन बीमा कवरेज के साथ जोड़ता है।",
       boxes: [
         { title: "संपत्ति निर्माण", desc: "अनुशासित SIP निवेश के माध्यम से मार्केट-लिंक्ड रिटर्न से अपना पैसा बढ़ाएं।" },
-        { title: "लाइफ प्रोटेक्शन", desc: "इनबिल्ट लाइफ कवर सुनिश्चित करता है कि आपका परिवार आर्थिक रूप से सुरक्षित रहे।" },
+        { title: "जीवन बीमा सुरक्षा", desc: "इनबिल्ट लाइफ कवर आपके परिवार को सुरक्षित रखता है – जीवन में और उसके बाद भी।" },
         { title: "लक्ष्य-आधारित योजना", desc: "अपने निवेश को विशिष्ट लक्ष्यों से जोड़ें — शिक्षा, रिटायरमेंट, घर, या विरासत।" },
-        { title: "दूसरी आय", desc: "स्मार्ट आंशिक निकासी रणनीतियों के माध्यम से भविष्य की आय धारा बनाएं।" },
+        { title: "दूसरी आय रणनीति", desc: "स्मार्ट आंशिक निकासी रणनीतियों के माध्यम से भविष्य की टैक्स-फ्री आय धारा बनाएं।" },
       ],
     },
     powerful: {
       title: "SMART SIP 360 शक्तिशाली क्यों है?",
       cards: [
-        { title: "100% प्रीमियम निवेश", desc: "आपका हर रुपया पहले दिन से आपके लिए काम करता है।" },
         { title: "360X तक लाइफ कवर", desc: "उदाहरण: ₹20,000 मासिक SIP = ₹72 लाख लाइफ कवर।" },
         { title: "टैक्स-फ्री संरचना", desc: "मैच्योरिटी राशि सेक्शन 10(10D) के तहत 100% टैक्स-फ्री है।" },
         { title: "स्मार्ट आंशिक निकासी", desc: "जरूरत पड़ने पर अपने फंड तक पहुंचें।" },
@@ -191,9 +238,9 @@ const content = {
     plans: {
       title: "अपना प्लान विकल्प चुनें",
       items: [
-        { name: "वेल्थ सिक्योर", desc: "अधिकतम मार्केट एक्सपोज़र और ग्रोथ पोटेंशियल के साथ दीर्घकालिक संपत्ति निर्माण पर केंद्रित।", recommended: false },
-        { name: "फ्यूचर सिक्योर", desc: "आपके परिवार की उपलब्धियों के लिए ग्रोथ और प्रोटेक्शन का संतुलित दृष्टिकोण।", recommended: false },
-        { name: "फैमिली सिक्योर", desc: "अधिकतम लाइफ कवरेज के साथ संपत्ति-निर्माण — सुरक्षा और ग्रोथ दोनों चाहने वालों के लिए आदर्श।", recommended: true },
+        { name: "वेल्थ सिक्योर", desc: "अधिकतम मार्केट एक्सपोज़र और ग्रोथ पोटेंशियल के साथ दीर्घकालिक संपत्ति निर्माण पर केंद्रित।" },
+        { name: "फ्यूचर सिक्योर", desc: "आपके परिवार की उपलब्धियों के लिए ग्रोथ और प्रोटेक्शन का संतुलित दृष्टिकोण।" },
+        { name: "फैमिली सिक्योर", desc: "अधिकतम लाइफ कवरेज के साथ संपत्ति-निर्माण — सुरक्षा और ग्रोथ दोनों चाहने वालों के लिए आदर्श।" },
       ],
     },
     illustration: {
@@ -217,13 +264,11 @@ const content = {
         ["प्रवेश आयु", "0 – 60 वर्ष"],
         ["पॉलिसी अवधि", "15 / 20 / 25 / 30 वर्ष"],
         ["प्रीमियम भुगतान अवधि", "5 / 7 / 10 / 12 वर्ष"],
-        ["न्यूनतम प्रीमियम", "₹3,000/माह"],
+        ["न्यूनतम – अधिकतम प्रीमियम", "₹2,000 – ₹20,000 प्रति माह"],
         ["बीमा राशि", "मासिक प्रीमियम का 360X तक"],
         ["फंड विकल्प", "इक्विटी, डेट और बैलेंस्ड में कई फंड विकल्प"],
         ["आंशिक निकासी", "5 पॉलिसी वर्षों के बाद अनुमति"],
         ["टैक्स लाभ", "सेक्शन 80C (प्रीमियम) और 10(10D) (मैच्योरिटी)"],
-        ["लोन सुविधा", "लागू नहीं (ULIP)"],
-        ["सेटलमेंट विकल्प", "एकमुश्त या किस्तों में भुगतान"],
       ],
     },
     whyUs: {
@@ -242,10 +287,10 @@ const content = {
       fields: { name: "नाम", mobile: "मोबाइल नंबर", email: "ईमेल", budget: "मासिक निवेश बजट", goal: "आपका लक्ष्य" },
       goals: ["बच्चे की शिक्षा", "रिटायरमेंट प्लानिंग", "संपत्ति निर्माण", "टैक्स बचत", "परिवार सुरक्षा", "दूसरी आय"],
       btn: "अभी मेरा कस्टम प्लान पाएं",
-      call: "कॉल / WhatsApp: 9425393438",
+      call: "कॉल / WhatsApp: +91 9425393438",
     },
     faq: {
-      title: "अक्सर पूछे जाने वाले प्रश्न",
+      title: "प्रश्न सारांश",
       items: [
         { q: "SMART SIP 360 क्या है?", a: "SMART SIP 360 Tata AIA द्वारा पेश किया गया एक ULIP है जो व्यवस्थित निवेश को जीवन बीमा के साथ जोड़ता है।" },
         { q: "क्या SMART SIP 360 सुरक्षित है?", a: "रिटर्न फंड प्रदर्शन पर निर्भर करते हैं। हालांकि, लाइफ कवर घटक आपके परिवार के लिए सुरक्षा की गारंटी देता है।" },
@@ -256,12 +301,55 @@ const content = {
         { q: "यह म्यूचुअल फंड SIP से कैसे अलग है?", a: "म्यूचुअल फंड SIP के विपरीत, SMART SIP 360 इनबिल्ट लाइफ कवर, टैक्स-फ्री मैच्योरिटी, और प्रीमियम छूट लाभ प्रदान करता है।" },
       ],
     },
+    smartSipCombo: {
+      title: "SMART SIP 360 = निवेश + बीमा एक स्मार्ट प्लान में",
+      text: "ULIPs जीवन बीमा को मार्केट-लिंक्ड निवेश के साथ जोड़ते हैं। प्रीमियम कवरेज और फंड (इक्विटी, डेट, या हाइब्रिड) में जोखिम के आधार पर बंट जाता है। ये लचीले, दीर्घकालिक संपत्ति निर्माण और 100% टैक्स-फ्री मैच्योरिटी प्रदान करते हैं।",
+    },
+    ulipBlocks: {
+      howWorks: {
+        title: "ULIP प्लान कैसे काम करता है?",
+        points: [
+          "नियमित प्रीमियम भरें (मासिक/तिमाही/वार्षिक); एक हिस्सा जीवन बीमा में, बाकी चुने हुए फंड में निवेश।",
+          "निवेश निश्चित फेस वैल्यू पर यूनिट्स में बंटता है; यूनिट वैल्यू NAV है।",
+          "बाज़ार प्रदर्शन के साथ बढ़ता है; शर्तों के अनुसार फंड स्विच करें।",
+          "मैच्योरिटी पर फंड वैल्यू प्राप्त करें।",
+          "मृत्यु पर, परिवार को सम एश्योर्ड + कुल फंड वैल्यू का अधिक मिलता है।",
+        ],
+      },
+      keyFeatures: {
+        title: "ULIPs की मुख्य विशेषताएं",
+        items: [
+          { title: "बीमा + निवेश एक प्लान में", desc: "ULIPs दोहरे लाभ प्रदान करते हैं।" },
+          { title: "फंड के बीच स्विच करें", desc: "इक्विटी/डेट फंड के बीच स्विच; 12 स्विच की अनुमति।" },
+          { title: "प्रीमियम रीडायरेक्शन", desc: "भविष्य के प्रीमियम को आवंटन प्रतिशत द्वारा रीडायरेक्ट करें।" },
+          { title: "आंशिक निकासी", desc: "5-वर्ष लॉक-इन; उसके बाद असीमित आंशिक निकासी।" },
+        ],
+      },
+      myths: {
+        title: "ULIPs के बारे में सामान्य मिथक",
+        items: [
+          { myth: "ULIPs कम रिटर्न देते हैं", reality: "आधुनिक ULIPs प्रतिस्पर्धी रिटर्न देते हैं।" },
+          { myth: "ULIPs महंगे हैं", reality: "IRDAI नियमों ने शुल्क कम किए।" },
+          { myth: "ULIPs उच्च जोखिम हैं", reality: "जोखिम चुने गए फंड पर निर्भर करता है।" },
+          { myth: "ULIPs जटिल हैं", reality: "फंड आवंटन समझने पर आसान।" },
+          { myth: "बाज़ार उतार-चढ़ाव लाइफ कवर को प्रभावित करता है", reality: "लाइफ कवर स्थिर रहता है।" },
+        ],
+      },
+      whoCanOpt: {
+        title: "इस प्लान के लिए कौन आवेदन कर सकता है?",
+        items: [
+          "दीर्घकालिक संपत्ति निर्माता",
+          "सुरक्षा + विकास चाहने वाले निवेशक",
+          "टैक्स-सजग व्यक्ति",
+          "कम से उच्च जोखिम प्रोफाइल",
+        ],
+      },
+    },
   },
 };
 
-// Icon arrays for sections
 const whatIsIcons = [TrendingUp, Shield, Target, HandCoins];
-const powerfulIcons = [Wallet, Shield, Landmark, HandCoins, Heart, Users];
+const powerfulIcons = [Shield, Landmark, HandCoins, Heart, Users];
 const whoShouldIcons = [Briefcase, Lightbulb, Baby, PiggyBank, Home, Users];
 const whyUsIcons = [Award, Target, Heart, BadgeCheck, Star];
 
@@ -290,15 +378,18 @@ const SmartSip360Page = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-4xl font-bold leading-tight">{t.hero.h1}</h1>
-              <h2 className="text-lg md:text-xl font-medium text-[hsl(220,80%,80%)]">{t.hero.h2}</h2>
-              <div className="space-y-1 text-white/90 text-sm md:text-base">
+              <h1 className="text-xl md:text-3xl font-bold leading-tight">
+                {t.hero.h1}
+                <span className="block text-base md:text-xl font-semibold text-[hsl(220,80%,80%)] mt-2">{t.hero.h1sub}</span>
+              </h1>
+              <h2 className="text-sm md:text-base font-medium text-[hsl(220,80%,80%)]">{t.hero.h2}</h2>
+              <div className="space-y-1 text-white/90 text-sm">
                 {t.hero.desc.map((d, i) => <p key={i}>{d}</p>)}
               </div>
               <ul className="space-y-2">
                 {t.hero.bullets.map((b, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm md:text-base">
-                    <CheckCircle2 className="h-5 w-5 text-[hsl(142,55%,45%)] shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-[hsl(142,55%,45%)] shrink-0" />
                     {b}
                   </li>
                 ))}
@@ -306,7 +397,7 @@ const SmartSip360Page = () => {
               <div className="flex flex-wrap gap-4 pt-2">
                 <Button
                   size="lg"
-                  className="rounded-full bg-destructive text-destructive-foreground hover:bg-destructive/90 text-sm md:text-base px-6"
+                  className="rounded-full bg-destructive text-destructive-foreground hover:bg-destructive/90 text-sm px-6"
                   onClick={() => document.querySelector("#sip-cta")?.scrollIntoView({ behavior: "smooth" })}
                 >
                   {t.hero.cta1} <ArrowRight className="ml-1 h-4 w-4" />
@@ -314,7 +405,7 @@ const SmartSip360Page = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white/40 text-white hover:bg-white/10 text-sm md:text-base px-6"
+                  className="rounded-full border-accent text-accent bg-accent/10 hover:bg-accent hover:text-white text-sm px-6"
                   onClick={() => document.querySelector("#illustration")?.scrollIntoView({ behavior: "smooth" })}
                 >
                   {t.hero.cta2}
@@ -324,7 +415,6 @@ const SmartSip360Page = () => {
 
             {/* Hero Image Placeholder */}
             <div className="bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center aspect-[4/3] text-white/60 text-center p-8">
-              {/* Replace with actual hero illustration */}
               <div>
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
                   <TrendingUp className="h-10 w-10" />
@@ -343,9 +433,7 @@ const SmartSip360Page = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-foreground">{t.whatIs.title}</h2>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
             <p className="text-muted-foreground leading-relaxed">{t.whatIs.text}</p>
-            {/* Image Placeholder */}
             <div className="bg-muted rounded-2xl flex items-center justify-center aspect-[4/3] text-muted-foreground text-center p-8 border border-border">
-              {/* Replace with ULIP Working Illustration */}
               <div>
                 <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-secondary flex items-center justify-center">
                   <Lightbulb className="h-8 w-8 text-secondary-foreground" />
@@ -407,19 +495,8 @@ const SmartSip360Page = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-foreground">{t.plans.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.plans.items.map((plan, i) => (
-              <Card
-                key={i}
-                className={`relative hover:shadow-xl transition-shadow ${
-                  plan.recommended ? "border-2 border-destructive ring-2 ring-destructive/20" : "border-border"
-                }`}
-              >
-                {plan.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-destructive text-destructive-foreground text-xs font-bold px-4 py-1 rounded-full">
-                    RECOMMENDED
-                  </div>
-                )}
+              <Card key={i} className="hover:shadow-xl transition-shadow border-border">
                 <CardHeader className="text-center pt-8">
-                  {/* Replace with plan image */}
                   <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-muted flex items-center justify-center text-muted-foreground">
                     <Shield className="h-7 w-7" />
                   </div>
@@ -438,7 +515,6 @@ const SmartSip360Page = () => {
       <section id="illustration" className="section-padding bg-muted">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">{t.illustration.title}</h2>
-          {/* Replace with Investment Chart */}
           <div className="bg-card border border-border rounded-2xl aspect-[16/9] flex items-center justify-center text-muted-foreground mb-6 mx-auto max-w-3xl">
             <div>
               <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-muted flex items-center justify-center">
@@ -523,26 +599,26 @@ const SmartSip360Page = () => {
             <div className="bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 border border-white/20">
               <h2 className="text-xl md:text-2xl font-bold mb-2">{t.cta.title}</h2>
               <p className="text-white/80 text-sm mb-6">{t.cta.subtitle}</p>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form id="sip-consultation-form" className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <Label className="text-white/90 text-sm">{t.cta.fields.name}</Label>
-                  <Input className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.name} />
+                  <Input name="name" className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.name} />
                 </div>
                 <div>
                   <Label className="text-white/90 text-sm">{t.cta.fields.mobile}</Label>
-                  <Input className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.mobile} />
+                  <Input name="mobile" className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.mobile} />
                 </div>
                 <div>
                   <Label className="text-white/90 text-sm">{t.cta.fields.email}</Label>
-                  <Input type="email" className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.email} />
+                  <Input name="email" type="email" className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder={t.cta.fields.email} />
                 </div>
                 <div>
                   <Label className="text-white/90 text-sm">{t.cta.fields.budget}</Label>
-                  <Input className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder="₹" />
+                  <Input name="budget" className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/40" placeholder="₹" />
                 </div>
                 <div>
                   <Label className="text-white/90 text-sm">{t.cta.fields.goal}</Label>
-                  <Select>
+                  <Select name="goal">
                     <SelectTrigger className="mt-1 bg-white/10 border-white/20 text-white">
                       <SelectValue placeholder={t.cta.fields.goal} />
                     </SelectTrigger>
@@ -564,7 +640,6 @@ const SmartSip360Page = () => {
 
             {/* Image Placeholder */}
             <div className="bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center aspect-[4/3] text-white/60 text-center p-8">
-              {/* Replace with consultation illustration */}
               <div>
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
                   <GraduationCap className="h-10 w-10" />
@@ -577,7 +652,7 @@ const SmartSip360Page = () => {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── FAQ / Question Summary ── */}
       <section className="section-padding">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">{t.faq.title}</h2>
@@ -593,6 +668,100 @@ const SmartSip360Page = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* ── NEW SECTION: SMART SIP 360 = Investment + Insurance ── */}
+      <section className="section-padding bg-gradient-to-br from-[hsl(220,60%,15%)] to-[hsl(220,55%,25%)] text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <Zap className="h-12 w-12 mx-auto mb-6 text-accent" />
+          <h2 className="text-xl md:text-3xl font-bold mb-6">{t.smartSipCombo.title}</h2>
+          <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl mx-auto">
+            {t.smartSipCombo.text}
+          </p>
+        </div>
+      </section>
+
+      {/* ── NEW SECTION: ULIP Explanation Blocks ── */}
+      <section className="section-padding">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Block 1: How Does ULIP Work */}
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-10 h-10 mb-2 rounded-lg bg-[hsl(220,60%,95%)] flex items-center justify-center">
+                  <Layers className="h-5 w-5 text-[hsl(220,60%,35%)]" />
+                </div>
+                <CardTitle className="text-lg">{t.ulipBlocks.howWorks.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {t.ulipBlocks.howWorks.points.map((p, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Block 2: Key Features */}
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-10 h-10 mb-2 rounded-lg bg-[hsl(220,60%,95%)] flex items-center justify-center">
+                  <Star className="h-5 w-5 text-[hsl(220,60%,35%)]" />
+                </div>
+                <CardTitle className="text-lg">{t.ulipBlocks.keyFeatures.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {t.ulipBlocks.keyFeatures.items.map((f, i) => (
+                  <div key={i}>
+                    <p className="text-sm font-semibold text-foreground">{f.title}</p>
+                    <p className="text-sm text-muted-foreground">{f.desc}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Block 3: Common Myths */}
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-10 h-10 mb-2 rounded-lg bg-[hsl(220,60%,95%)] flex items-center justify-center">
+                  <AlertTriangle className="h-5 w-5 text-[hsl(220,60%,35%)]" />
+                </div>
+                <CardTitle className="text-lg">{t.ulipBlocks.myths.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {t.ulipBlocks.myths.items.map((m, i) => (
+                  <div key={i} className="border-l-2 border-accent pl-3">
+                    <p className="text-sm font-semibold text-destructive">Myth: {m.myth}</p>
+                    <p className="text-sm text-muted-foreground">Reality: {m.reality}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Block 4: Who Can Opt */}
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-10 h-10 mb-2 rounded-lg bg-[hsl(220,60%,95%)] flex items-center justify-center">
+                  <UserCheck className="h-5 w-5 text-[hsl(220,60%,35%)]" />
+                </div>
+                <CardTitle className="text-lg">{t.ulipBlocks.whoCanOpt.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {t.ulipBlocks.whoCanOpt.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

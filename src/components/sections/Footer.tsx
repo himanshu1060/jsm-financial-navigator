@@ -38,7 +38,7 @@ const Footer = () => (
         <div>
           <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
           <div className="space-y-3 text-sm text-primary-foreground/80">
-            <p>📞 9425393438 / 9406960918</p>
+            <p>📞 +91 9425393438 / +91 9406960918</p>
             <p>📍 96, Good Shepherd Colony, Banjari, Kolar Road, Bhopal (M.P.) 462042</p>
             <p>✉️ jainjsm@gmail.com</p>
           </div>

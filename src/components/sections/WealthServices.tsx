@@ -1,7 +1,7 @@
 import { TrendingUp, Landmark, BarChart3, Briefcase, PiggyBank, BadgeDollarSign } from "lucide-react";
 
 const services = [
-  { icon: TrendingUp, title: "Mutual Fund", desc: "SIP, SWP, Lumpsum, Education, Marriage, Retirement" },
+  { icon: TrendingUp, title: "Mutual Fund", desc: "SIP, SWP, Lumpsum, STP" },
   { icon: Landmark, title: "Loan Against MF", desc: "Quick loans against your mutual fund investments" },
   { icon: BarChart3, title: "Equity & ETFs", desc: "Direct equity and exchange-traded fund investments" },
   { icon: Briefcase, title: "Portfolio Management (PMS)", desc: "Professional portfolio management services" },

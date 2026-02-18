@@ -5,7 +5,6 @@ import AboutSection from "@/components/sections/AboutSection";
 import WealthServices from "@/components/sections/WealthServices";
 import InsuranceServices from "@/components/sections/InsuranceServices";
 import SmartSip360 from "@/components/sections/SmartSip360";
-import BlogSection from "@/components/sections/BlogSection";
 import AssociatedCompanies from "@/components/sections/AssociatedCompanies";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
@@ -20,7 +19,6 @@ const Index = () => {
       <WealthServices />
       <InsuranceServices />
       <SmartSip360 />
-      <BlogSection />
       <AssociatedCompanies />
       <ContactSection />
       <Footer />

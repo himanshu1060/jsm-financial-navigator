@@ -10,7 +10,6 @@ const navLinks = [
   { label: "JSM Wealth", href: "#wealth" },
   { label: "JSM Insurance", href: "#insurance" },
   { label: "SMART SIP 360", href: "/smart-sip-360", isRoute: true },
-  { label: "Blogs", href: "#blogs" },
   { label: "Contact Us", href: "#contact" },
 ];
 
