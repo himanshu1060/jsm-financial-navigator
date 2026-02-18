@@ -53,7 +53,7 @@ const ContactSection = () => {
               <Phone className="h-6 w-6 text-accent shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Phone</p>
-                <p className="text-muted-foreground">9425393438 / 9406960918</p>
+                <p className="text-muted-foreground">+91 9425393438 / +91 9406960918</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -75,9 +75,10 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Input
+                name="name"
                 placeholder="Your Name"
                 value={form.name}
                 onChange={(e) => update("name", e.target.value)}
@@ -87,6 +88,7 @@ const ContactSection = () => {
             </div>
             <div>
               <Input
+                name="phone"
                 placeholder="Phone Number"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
@@ -96,6 +98,7 @@ const ContactSection = () => {
             </div>
             <div>
               <Input
+                name="email"
                 placeholder="Email Address"
                 type="email"
                 value={form.email}
@@ -106,6 +109,7 @@ const ContactSection = () => {
             </div>
             <div>
               <Textarea
+                name="message"
                 placeholder="Your Message"
                 value={form.message}
                 onChange={(e) => update("message", e.target.value)}
