@@ -4,6 +4,7 @@ import HomeSection from "@/components/sections/HomeSection";
 import AboutSection from "@/components/sections/AboutSection";
 import WealthServices from "@/components/sections/WealthServices";
 import InsuranceServices from "@/components/sections/InsuranceServices";
+import BookConsultation from "@/components/sections/BookConsultation";
 import SmartSip360 from "@/components/sections/SmartSip360";
 import AssociatedCompanies from "@/components/sections/AssociatedCompanies";
 import ContactSection from "@/components/sections/ContactSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <AboutSection />
       <WealthServices />
       <InsuranceServices />
+      <BookConsultation />
       <SmartSip360 />
       <AssociatedCompanies />
       <ContactSection />

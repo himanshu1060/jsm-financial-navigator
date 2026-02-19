@@ -3,8 +3,8 @@ import { Search, TrendingUp, ShieldCheck } from "lucide-react";
 const AboutSection = () => (
   <section id="about" className="section-padding bg-secondary">
     <div className="container mx-auto max-w-5xl">
-      <div className="bg-card rounded-lg p-8 shadow-sm max-w-3xl mx-auto">
-        <h3 className="text-xl md:text-2xl font-semibold text-primary text-center mb-6">
+      <div className="bg-card rounded-lg p-8 shadow-sm max-w-4xl mx-auto">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-primary text-center mb-6 whitespace-nowrap">
           What Smart decisions, Strategic growth, Managed wealth Means
         </h3>
         <ul className="space-y-4">
