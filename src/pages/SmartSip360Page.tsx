@@ -30,7 +30,6 @@ import {
   Lightbulb,
   HandCoins,
   GraduationCap,
-  Home,
   Briefcase,
   Baby,
   PiggyBank,
@@ -40,6 +39,14 @@ import {
   AlertTriangle,
   UserCheck,
   Zap,
+  LineChart,
+  ShieldCheck,
+  HeartHandshake,
+  BarChart3,
+  Gem,
+  ClipboardCheck,
+  Headphones,
+  Search,
 } from "lucide-react";
 
 const content = {
@@ -73,37 +80,47 @@ const content = {
         { title: "Second Income Strategy", desc: "Create a future tax-free income stream through smart partial withdrawal strategies." },
       ],
     },
+    intro: {
+      text: "You invest monthly like a SIP, and your premium is invested in market-linked funds while your family gets life cover protection.",
+      heading: "It is designed for",
+      bullets: [
+        "Salaried professionals and business owners",
+        "Parents planning for their child's education",
+        "Individuals planning for retirement",
+        "Anyone seeking tax-free wealth creation, wealth accumulation, and family income security",
+      ],
+    },
     powerful: {
       title: "Why SMART SIP 360 is Powerful?",
       cards: [
         { title: "Life Cover up to 360X", desc: "Example: ₹20,000 monthly SIP = ₹72 Lakhs life cover to protect your loved ones." },
-        { title: "Tax-Free Structure", desc: "Maturity proceeds are 100% tax-free under Section 10(10D), boosting your effective returns." },
-        { title: "Smart Partial Withdrawals", desc: "Access your funds when you need them — for emergencies, goals, or creating second income." },
-        { title: "Waiver of Premium", desc: "In case of unfortunate events, future premiums are waived and the plan continues for your family." },
-        { title: "Women Empowerment", desc: "Special benefits and discounts for women investors to encourage financial independence." },
+        { title: "100% Tax-Free Structure", desc: "Zero LTCG (as per applicable policy structure & limits)\nTax-free maturity (subject to prevailing tax laws)." },
+        { title: "Smart Partial Withdrawals", desc: "After lock-in, you can generate systematic income." },
+        { title: "Waiver of Premium Benefit", desc: "In selected options, future premiums are paid by the company in case of unfortunate events." },
+        { title: "Women Empowerment Benefits", desc: "Additional allocation benefits for female policyholders (as applicable)." },
       ],
     },
     plans: {
       title: "Choose Your Plan Option",
       items: [
-        { name: "Wealth Secure", desc: "Focused on long-term wealth creation with maximum market exposure and growth potential." },
-        { name: "Future Secure", desc: "Balanced approach combining growth with protection for your family's milestones." },
-        { name: "Family Secure", desc: "Maximum life coverage with wealth-building — ideal for breadwinners who want both security and growth." },
+        { name: "Wealth Secure", bullets: ["Focus on wealth creation", "Death benefit + policy ends", "100% Maturity Corpus"] },
+        { name: "Future Secure", bullets: ["Focus on wealth creation + receive life insurance", "Death benefit – Policy continues", "Maturity Benefit equal to FV paid to the nominee", "100% Maturity Corpus + 360X life insurance cover"] },
+        { name: "Family Secure", bullets: ["Death benefit", "Future premiums waived", "Policy continues"] },
       ],
     },
     illustration: {
       title: "Investment Illustration",
-      disclaimer: "Returns are market-linked and not guaranteed. Investment risk is borne by the policyholder.",
+      disclaimer: "Disclaimer: Returns are market-linked and not guaranteed. Investment risk is borne by the policyholder.",
     },
     whoShould: {
       title: "Who Should Invest?",
+      subtitle: "SMART SIP 360 is ideal for:",
       items: [
-        "Salaried professionals looking for disciplined wealth creation",
-        "Young earners wanting life cover + investment together",
-        "Parents planning for children's education or marriage",
-        "Anyone seeking tax-efficient long-term investment",
-        "Individuals wanting a second income stream post-retirement",
-        "Women looking for empowerment benefits",
+        "Salaried professionals",
+        "Business owners",
+        "Parents planning child education",
+        "Individuals planning retirement",
+        "Those wanting tax-free wealth creation with protection",
       ],
     },
     planDetails: {
@@ -122,18 +139,22 @@ const content = {
     whyUs: {
       title: "Why Invest Through Us?",
       items: [
-        { title: "12+ Years Experience", desc: "Trusted advisory across hundreds of families." },
-        { title: "Personalized Planning", desc: "Every plan is tailored to your unique goals and risk profile." },
-        { title: "End-to-End Support", desc: "From onboarding to claims — we're with you at every step." },
-        { title: "Transparent Process", desc: "No hidden charges, no surprises — complete clarity always." },
-        { title: "Post-Sale Service", desc: "Regular reviews, rebalancing suggestions, and proactive communication." },
+        { title: "Personalized Goal Planning", desc: "Custom plans aligned to your unique financial goals." },
+        { title: "Custom Return Illustration", desc: "See projected returns tailored to your investment." },
+        { title: "Claim Assistance", desc: "End-to-end support for hassle-free claims." },
+        { title: "Long-Term Portfolio Monitoring", desc: "Ongoing reviews and rebalancing for optimal growth." },
+        { title: "Dedicated Support", desc: "A dedicated advisor for all your queries." },
       ],
+    },
+    readyCta: {
+      title: "Ready to Secure Your Future?",
+      text: "Let us calculate your personalized SMART SIP 360 plan.",
     },
     cta: {
       title: "Get Your Custom Plan Now",
       subtitle: "Fill in your details and our advisor will reach out within 24 hours.",
       fields: { name: "Name", mobile: "Mobile Number", email: "Email", budget: "Monthly Investment Budget", goal: "Your Goal" },
-      goals: ["Child's Education", "Retirement Planning", "Wealth Creation", "Tax Saving", "Family Protection", "Second Income"],
+      goals: ["Child's Education", "Retirement Planning", "Wealth Creation"],
       btn: "GET MY CUSTOM PLAN NOW",
       call: "Call / WhatsApp: +91 9425393438",
     },
@@ -194,6 +215,15 @@ const content = {
         ],
       },
     },
+    readyPlan: {
+      title: "Ready to Plan Your Financial Future?",
+      text: "Book a Free Consultation Today",
+      call: "📞 Call/WhatsApp: 9425393438",
+    },
+    disclaimer: {
+      title: "Important Disclaimer",
+      text: "SMART SIP 360 is a Unit Linked Insurance Plan offered by Tata AIA Life Insurance. Investment in market-linked funds is subject to market risks. Past performance does not guarantee future returns. Tax benefits are subject to prevailing tax laws. Please read sales brochure carefully before investing.",
+    },
   },
   hi: {
     langBtn: "View in English",
@@ -225,37 +255,47 @@ const content = {
         { title: "दूसरी आय रणनीति", desc: "स्मार्ट आंशिक निकासी रणनीतियों के माध्यम से भविष्य की टैक्स-फ्री आय धारा बनाएं।" },
       ],
     },
+    intro: {
+      text: "आप SIP की तरह मासिक निवेश करते हैं, और आपका प्रीमियम मार्केट-लिंक्ड फंड में निवेश किया जाता है जबकि आपके परिवार को लाइफ कवर प्रोटेक्शन मिलता है।",
+      heading: "यह इनके लिए डिज़ाइन किया गया है",
+      bullets: [
+        "वेतनभोगी पेशेवर और व्यवसाय मालिक",
+        "बच्चों की शिक्षा की योजना बनाने वाले माता-पिता",
+        "रिटायरमेंट की योजना बनाने वाले व्यक्ति",
+        "टैक्स-फ्री संपत्ति निर्माण, संपत्ति संचय, और पारिवारिक आय सुरक्षा चाहने वाले",
+      ],
+    },
     powerful: {
       title: "SMART SIP 360 शक्तिशाली क्यों है?",
       cards: [
         { title: "360X तक लाइफ कवर", desc: "उदाहरण: ₹20,000 मासिक SIP = ₹72 लाख लाइफ कवर।" },
-        { title: "टैक्स-फ्री संरचना", desc: "मैच्योरिटी राशि सेक्शन 10(10D) के तहत 100% टैक्स-फ्री है।" },
-        { title: "स्मार्ट आंशिक निकासी", desc: "जरूरत पड़ने पर अपने फंड तक पहुंचें।" },
-        { title: "प्रीमियम की छूट", desc: "दुर्भाग्यपूर्ण घटनाओं में, भविष्य के प्रीमियम माफ कर दिए जाते हैं।" },
-        { title: "महिला सशक्तिकरण", desc: "महिला निवेशकों के लिए विशेष लाभ और छूट।" },
+        { title: "100% टैक्स-फ्री संरचना", desc: "शून्य LTCG (लागू पॉलिसी संरचना और सीमाओं के अनुसार)\nटैक्स-फ्री मैच्योरिटी (प्रचलित कर कानूनों के अधीन)।" },
+        { title: "स्मार्ट आंशिक निकासी", desc: "लॉक-इन के बाद, आप व्यवस्थित आय उत्पन्न कर सकते हैं।" },
+        { title: "प्रीमियम छूट लाभ", desc: "चयनित विकल्पों में, दुर्भाग्यपूर्ण घटनाओं में भविष्य के प्रीमियम कंपनी द्वारा भुगतान किए जाते हैं।" },
+        { title: "महिला सशक्तिकरण लाभ", desc: "महिला पॉलिसीधारकों के लिए अतिरिक्त आवंटन लाभ (लागू होने पर)।" },
       ],
     },
     plans: {
       title: "अपना प्लान विकल्प चुनें",
       items: [
-        { name: "वेल्थ सिक्योर", desc: "अधिकतम मार्केट एक्सपोज़र और ग्रोथ पोटेंशियल के साथ दीर्घकालिक संपत्ति निर्माण पर केंद्रित।" },
-        { name: "फ्यूचर सिक्योर", desc: "आपके परिवार की उपलब्धियों के लिए ग्रोथ और प्रोटेक्शन का संतुलित दृष्टिकोण।" },
-        { name: "फैमिली सिक्योर", desc: "अधिकतम लाइफ कवरेज के साथ संपत्ति-निर्माण — सुरक्षा और ग्रोथ दोनों चाहने वालों के लिए आदर्श।" },
+        { name: "वेल्थ सिक्योर", bullets: ["संपत्ति निर्माण पर ध्यान", "मृत्यु लाभ + पॉलिसी समाप्त", "100% मैच्योरिटी कॉर्पस"] },
+        { name: "फ्यूचर सिक्योर", bullets: ["संपत्ति निर्माण + जीवन बीमा प्राप्त करें", "मृत्यु लाभ – पॉलिसी जारी", "मैच्योरिटी बेनिफिट FV के बराबर नॉमिनी को", "100% मैच्योरिटी कॉर्पस + 360X लाइफ इंश्योरेंस कवर"] },
+        { name: "फैमिली सिक्योर", bullets: ["मृत्यु लाभ", "भविष्य के प्रीमियम माफ", "पॉलिसी जारी"] },
       ],
     },
     illustration: {
       title: "निवेश चित्रण",
-      disclaimer: "रिटर्न मार्केट-लिंक्ड हैं और गारंटीड नहीं हैं। निवेश जोखिम पॉलिसीधारक द्वारा वहन किया जाता है।",
+      disclaimer: "अस्वीकरण: रिटर्न मार्केट-लिंक्ड हैं और गारंटीड नहीं हैं। निवेश जोखिम पॉलिसीधारक द्वारा वहन किया जाता है।",
     },
     whoShould: {
       title: "किसे निवेश करना चाहिए?",
+      subtitle: "SMART SIP 360 इनके लिए आदर्श है:",
       items: [
-        "अनुशासित संपत्ति निर्माण चाहने वाले वेतनभोगी पेशेवर",
-        "लाइफ कवर + निवेश दोनों चाहने वाले युवा कमाने वाले",
-        "बच्चों की शिक्षा या शादी की योजना बनाने वाले माता-पिता",
-        "टैक्स-कुशल दीर्घकालिक निवेश चाहने वाले",
-        "रिटायरमेंट के बाद दूसरी आय धारा चाहने वाले व्यक्ति",
-        "सशक्तिकरण लाभ चाहने वाली महिलाएं",
+        "वेतनभोगी पेशेवर",
+        "व्यवसाय मालिक",
+        "बच्चों की शिक्षा की योजना बनाने वाले माता-पिता",
+        "रिटायरमेंट की योजना बनाने वाले व्यक्ति",
+        "सुरक्षा के साथ टैक्स-फ्री संपत्ति निर्माण चाहने वाले",
       ],
     },
     planDetails: {
@@ -274,18 +314,22 @@ const content = {
     whyUs: {
       title: "हमारे माध्यम से क्यों निवेश करें?",
       items: [
-        { title: "12+ वर्षों का अनुभव", desc: "सैकड़ों परिवारों में विश्वसनीय सलाह।" },
-        { title: "व्यक्तिगत योजना", desc: "हर प्लान आपके अनूठे लक्ष्यों के अनुसार तैयार किया जाता है।" },
-        { title: "संपूर्ण सहायता", desc: "ऑनबोर्डिंग से लेकर क्लेम तक — हम हर कदम पर आपके साथ हैं।" },
-        { title: "पारदर्शी प्रक्रिया", desc: "कोई छिपे शुल्क नहीं, कोई आश्चर्य नहीं।" },
-        { title: "बिक्री के बाद सेवा", desc: "नियमित समीक्षा, रीबैलेंसिंग सुझाव, और सक्रिय संवाद।" },
+        { title: "व्यक्तिगत लक्ष्य योजना", desc: "आपके अनूठे वित्तीय लक्ष्यों के अनुरूप कस्टम प्लान।" },
+        { title: "कस्टम रिटर्न इलस्ट्रेशन", desc: "आपके निवेश के अनुरूप अनुमानित रिटर्न देखें।" },
+        { title: "क्लेम सहायता", desc: "परेशानी मुक्त क्लेम के लिए संपूर्ण सहायता।" },
+        { title: "दीर्घकालिक पोर्टफोलियो मॉनिटरिंग", desc: "इष्टतम विकास के लिए निरंतर समीक्षा।" },
+        { title: "समर्पित सहायता", desc: "आपके सभी प्रश्नों के लिए एक समर्पित सलाहकार।" },
       ],
+    },
+    readyCta: {
+      title: "अपना भविष्य सुरक्षित करने के लिए तैयार?",
+      text: "हमें आपका व्यक्तिगत SMART SIP 360 प्लान कैलकुलेट करने दें।",
     },
     cta: {
       title: "अपना कस्टम प्लान अभी पाएं",
       subtitle: "अपना विवरण भरें और हमारे सलाहकार 24 घंटे में आपसे संपर्क करेंगे।",
       fields: { name: "नाम", mobile: "मोबाइल नंबर", email: "ईमेल", budget: "मासिक निवेश बजट", goal: "आपका लक्ष्य" },
-      goals: ["बच्चे की शिक्षा", "रिटायरमेंट प्लानिंग", "संपत्ति निर्माण", "टैक्स बचत", "परिवार सुरक्षा", "दूसरी आय"],
+      goals: ["बच्चे की शिक्षा", "रिटायरमेंट प्लानिंग", "संपत्ति निर्माण"],
       btn: "अभी मेरा कस्टम प्लान पाएं",
       call: "कॉल / WhatsApp: +91 9425393438",
     },
@@ -345,13 +389,22 @@ const content = {
         ],
       },
     },
+    readyPlan: {
+      title: "अपने वित्तीय भविष्य की योजना बनाने के लिए तैयार?",
+      text: "आज ही एक मुफ्त परामर्श बुक करें",
+      call: "📞 कॉल/WhatsApp: 9425393438",
+    },
+    disclaimer: {
+      title: "महत्वपूर्ण अस्वीकरण",
+      text: "SMART SIP 360 Tata AIA Life Insurance द्वारा पेश किया गया एक यूनिट लिंक्ड इंश्योरेंस प्लान है। मार्केट-लिंक्ड फंड में निवेश बाज़ार जोखिमों के अधीन है। पिछला प्रदर्शन भविष्य के रिटर्न की गारंटी नहीं देता। कर लाभ प्रचलित कर कानूनों के अधीन हैं। कृपया निवेश करने से पहले बिक्री ब्रोशर ध्यान से पढ़ें।",
+    },
   },
 };
 
 const whatIsIcons = [TrendingUp, Shield, Target, HandCoins];
 const powerfulIcons = [Shield, Landmark, HandCoins, Heart, Users];
-const whoShouldIcons = [Briefcase, Lightbulb, Baby, PiggyBank, Home, Users];
-const whyUsIcons = [Award, Target, Heart, BadgeCheck, Star];
+const whyUsIcons = [Target, BarChart3, ClipboardCheck, Search, Headphones];
+const planIcons = [Gem, LineChart, HeartHandshake];
 
 const SmartSip360Page = () => {
   const [lang, setLang] = useState<"en" | "hi">("en");
@@ -464,6 +517,24 @@ const SmartSip360Page = () => {
         </div>
       </section>
 
+      {/* ── NEW: Intro content after What Is ── */}
+      <section className="section-padding bg-secondary">
+        <div className="container mx-auto max-w-4xl">
+          <p className="text-muted-foreground leading-relaxed text-center mb-8 text-base">
+            {t.intro.text}
+          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-foreground text-center mb-6">{t.intro.heading}</h3>
+          <ul className="space-y-3 max-w-2xl mx-auto">
+            {t.intro.bullets.map((b, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* ── SECTION 3 – Why Powerful ── */}
       <section className="section-padding bg-muted">
         <div className="container mx-auto max-w-6xl">
@@ -480,7 +551,7 @@ const SmartSip360Page = () => {
                     <CardTitle className="text-base">{card.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">{card.desc}</p>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">{card.desc}</p>
                   </CardContent>
                 </Card>
               );
@@ -494,19 +565,29 @@ const SmartSip360Page = () => {
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-foreground">{t.plans.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.plans.items.map((plan, i) => (
-              <Card key={i} className="hover:shadow-xl transition-shadow border-border">
-                <CardHeader className="text-center pt-8">
-                  <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-muted flex items-center justify-center text-muted-foreground">
-                    <Shield className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="text-lg">{plan.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground text-center">{plan.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {t.plans.items.map((plan, i) => {
+              const Icon = planIcons[i];
+              return (
+                <Card key={i} className="hover:shadow-xl transition-shadow border-border">
+                  <CardHeader className="text-center pt-8">
+                    <div className="w-14 h-14 mx-auto mb-3 rounded-full bg-[hsl(220,60%,95%)] flex items-center justify-center">
+                      <Icon className="h-7 w-7 text-[hsl(220,60%,35%)]" />
+                    </div>
+                    <CardTitle className="text-lg">{plan.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {plan.bullets.map((b, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -531,19 +612,15 @@ const SmartSip360Page = () => {
       {/* ── SECTION 6 – Who Should Invest ── */}
       <section className="section-padding">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-foreground">{t.whoShould.title}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {t.whoShould.items.map((item, i) => {
-              const Icon = whoShouldIcons[i];
-              return (
-                <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border">
-                  <div className="w-9 h-9 shrink-0 rounded-full bg-[hsl(220,60%,95%)] flex items-center justify-center">
-                    <Icon className="h-4 w-4 text-[hsl(220,60%,35%)]" />
-                  </div>
-                  <p className="text-sm text-foreground pt-1.5">{item}</p>
-                </div>
-              );
-            })}
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-foreground">{t.whoShould.title}</h2>
+          <p className="text-center text-muted-foreground mb-8">{t.whoShould.subtitle}</p>
+          <div className="max-w-2xl mx-auto space-y-3">
+            {t.whoShould.items.map((item, i) => (
+              <div key={i} className="flex items-center gap-3 p-3 bg-card rounded-xl border border-border">
+                <CheckCircle2 className="h-5 w-5 text-accent shrink-0" />
+                <p className="text-sm text-foreground">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -589,6 +666,21 @@ const SmartSip360Page = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ── Ready to Secure CTA ── */}
+      <section className="section-padding bg-gradient-to-r from-[hsl(220,60%,20%)] to-[hsl(220,55%,30%)] text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.readyCta.title}</h2>
+          <p className="text-white/80 text-base mb-6">{t.readyCta.text}</p>
+          <Button
+            size="lg"
+            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg text-base px-8 py-6"
+            onClick={() => document.querySelector("#sip-cta")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            {lang === "en" ? "Get Started Now" : "अभी शुरू करें"} <ArrowRight className="ml-1 h-5 w-5" />
+          </Button>
         </div>
       </section>
 
@@ -671,7 +763,7 @@ const SmartSip360Page = () => {
         </div>
       </section>
 
-      {/* ── NEW SECTION: SMART SIP 360 = Investment + Insurance ── */}
+      {/* ── SMART SIP 360 = Investment + Insurance ── */}
       <section className="section-padding bg-gradient-to-br from-[hsl(220,60%,15%)] to-[hsl(220,55%,25%)] text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <Zap className="h-12 w-12 mx-auto mb-6 text-accent" />
@@ -682,7 +774,7 @@ const SmartSip360Page = () => {
         </div>
       </section>
 
-      {/* ── NEW SECTION: ULIP Explanation Blocks ── */}
+      {/* ── ULIP Explanation Blocks ── */}
       <section className="section-padding">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -735,7 +827,7 @@ const SmartSip360Page = () => {
               <CardContent className="space-y-4">
                 {t.ulipBlocks.myths.items.map((m, i) => (
                   <div key={i} className="border-l-2 border-accent pl-3">
-                    <p className="text-sm font-semibold text-destructive">Myth: {m.myth}</p>
+                    <p className="text-sm font-semibold text-destructive">Myth {i + 1}: {m.myth}</p>
                     <p className="text-sm text-muted-foreground">Reality: {m.reality}</p>
                   </div>
                 ))}
@@ -765,7 +857,53 @@ const SmartSip360Page = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* ── Ready to Plan Your Financial Future ── */}
+      <section className="section-padding bg-primary text-primary-foreground">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.readyPlan.title}</h2>
+          <p className="text-lg font-semibold mb-4">{t.readyPlan.text}</p>
+          <p className="text-base text-primary-foreground/80">{t.readyPlan.call}</p>
+        </div>
+      </section>
+
+      {/* ── Footer with Disclaimer ── */}
+      <footer className="bg-primary text-primary-foreground py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          {/* Reuse standard footer content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                {["About Us", "Disclaimer", "Privacy Policy", "Terms of Use", "Contact Us", "Site Map"].map((label) => (
+                  <li key={label}>
+                    <span className="text-sm text-primary-foreground/80">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
+              <div className="space-y-3 text-sm text-primary-foreground/80">
+                <p>📞 +91 9425393438 / +91 9406960918</p>
+                <p>📍 96, Good Shepherd Colony, Banjari, Kolar Road, Bhopal (M.P.) 462042</p>
+                <p>✉️ jainjsm@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Disclaimer */}
+          <div className="border-t border-primary-foreground/20 mt-10 pt-6">
+            <h3 className="text-base font-semibold mb-3">{t.disclaimer.title}</h3>
+            <p className="text-xs text-primary-foreground/60 leading-relaxed">
+              {t.disclaimer.text}
+            </p>
+          </div>
+
+          <div className="border-t border-primary-foreground/20 mt-6 pt-6 text-center text-xs text-primary-foreground/60">
+            © {new Date().getFullYear()} JSM Wealth Health & Insurance. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };

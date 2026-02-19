@@ -45,7 +45,17 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/20 mt-10 pt-6 text-center text-xs text-primary-foreground/60">
+      {/* Important Disclaimer */}
+      <div className="border-t border-primary-foreground/20 mt-10 pt-6">
+        <h3 className="text-base font-semibold mb-3">Important Disclaimer</h3>
+        <p className="text-xs text-primary-foreground/60 leading-relaxed">
+          SMART SIP 360 is a Unit Linked Insurance Plan offered by Tata AIA Life Insurance.
+          Investment in market-linked funds is subject to market risks. Past performance does not guarantee future returns. Tax benefits are subject to prevailing tax laws.
+          Please read sales brochure carefully before investing.
+        </p>
+      </div>
+
+      <div className="border-t border-primary-foreground/20 mt-6 pt-6 text-center text-xs text-primary-foreground/60">
         © {new Date().getFullYear()} JSM Wealth Health & Insurance. All rights reserved.
       </div>
     </div>
